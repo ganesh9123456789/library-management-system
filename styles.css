@@ -1,0 +1,122 @@
+/* Common Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffccff, #ccffcc);
+    color: #333;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Login Page */
+.login-page {
+    text-align: center;
+    margin: auto; /* Center both vertically and horizontally */
+    width: 50%; /* Utilize half the page width for content */
+    padding: 30px; /* Spacious padding */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 15px; /* Increased spacing between label and input */
+    font-weight: bold;
+    font-size: 18px; /* Slightly larger font */
+}
+
+.login-form input {
+    width: 100%; /* Full width of the form */
+    padding: 14px; /* Spacious padding */
+    margin-bottom: 25px; /* More space between inputs */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounder corners */
+    font-size: 16px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px; /* Generous button size */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+
+/* Centering Helper (Full Page) */
+html {
+    height: 100%; /* Ensure full height of the page */
+}
+
+footer {
+    text-align: center;
+    margin-top: auto; /* Stick footer to the bottom */
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffccff, #ccffcc);
+    color: #333333;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main-container {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #4cafa2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+th, td {
+    border: 10x solid #12ad79;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #21718b;
+    color: white;
+}
+
+.footer {
+    text-align: center;
+    padding: 1opx;
+    background-color: #af4c74;
+    color: white;
+}
