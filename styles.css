@@ -1,126 +1,321 @@
-/* Common Styles */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #ffccff, #ccffcc);
-        color: #333;
-        height: 100vh; /* Full viewport height */
-        display: flex;
-        flex-direction: column;
+
+/* styles.css */
+
+/* For smooth fade-in effect */
+body {
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    
-    img{
-        width: 200px; /* Adjusted width for logo */;
+    to {
+        opacity: 1;
     }
-    
-    /* Login Page */
-    .login-page {
-        text-align: center;
-        margin: auto; /* Center both vertically and horizontally */
-        width: 50%; /* Utilize half the page width for content */
-        padding: 30px; /* Spacious padding */
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Bounce animation for the header */
+h1 {
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
-    
-    .login-form label {
-        display: block;
-        margin-bottom: 15px; /* Increased spacing between label and input */
-        font-weight: bold;
-        font-size: 18px; /* Slightly larger font */
+    50% {
+        transform: translateY(-10px);
     }
-    
-    .login-form input {
-        width: 100%; /* Full width of the form */
-        padding: 14px; /* Spacious padding */
-        margin-bottom: 25px; /* More space between inputs */
-        border: 1px solid #ddd;
-        border-radius: 8px; /* Rounder corners */
-        font-size: 16px;
+}
+
+/* For form entry animations */
+.login-form {
+    animation: slideIn 1.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
     }
-    
-    .login-button {
-        width: 100%;
-        padding: 15px; /* Generous button size */
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 18px;
-        font-weight: bold;
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
-    
-    .login-button:hover {
-        background-color: #45a049;
-    }
-    
-    /* Centering Helper (Full Page) */
-    html {
-        height: 100%; /* Ensure full height of the page */
-    }
-    
-    footer {
-        text-align: center;
-        margin-top: auto; /* Stick footer to the bottom */
-        padding: 20px;
-        background-color: #4CAF50;
-        color: white;
-        font-size: 16px;
-    }
-    
-    
-    /* styles.css */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        padding: 20px;
-        background: linear-gradient(135deg, #ffccff, #ccffcc);
-        color: #333333;
-    }
-    
-    .header {
-        text-align: center;
-        padding: 20px;
-        background-color: #4CAF50;
-        color: white;
-    }
-    
-    .main-container {
-        padding: 20px;
-    }
-    
-    section {
-        margin-bottom: 30px;
-    }
-    
-    h2 {
-        color: #4cafa2;
-    }
-    
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        background-color: #f9f9f9;
-    }
-    
-    th, td {
-        border: 10x solid #12ad79;
-        padding: 10px;
-        text-align: center;
-    }
-    
-    th {
-        background-color: #21718b;
-        color: white;
-    }
-    
-    .footer {
-        text-align: center;
-        padding: 1opx;
-        background-color: #af4c74;
-        color: white;
-    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffccff, #ccffcc);
+    color: #333;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 200px; /* Adjusted width for logo */;
+}
+
+/* Login Page */
+.login-page {
+    text-align: center;
+    margin: auto; /* Center both vertically and horizontally */
+    width: 50%; /* Utilize half the page width for content */
+    padding: 30px; /* Spacious padding */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 15px; /* Increased spacing between label and input */
+    font-weight: bold;
+    font-size: 18px; /* Slightly larger font */
+}
+
+.login-form input {
+    width: 100%; /* Full width of the form */
+    padding: 14px; /* Spacious padding */
+    margin-bottom: 25px; /* More space between inputs */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounder corners */
+    font-size: 16px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px; /* Generous button size */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+
+/* Centering Helper (Full Page) */
+html {
+    height: 100%; /* Ensure full height of the page */
+}
+
+footer {
+    text-align: center;
+    margin-top: auto; /* Stick footer to the bottom */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 10px;
+}
+
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #ffccff, #ccffcc);
+    color: #333333;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main-container {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #4cafa2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+th, td {
+    border: 10x solid #12ad79;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #21718b;
+    color: white;
+}
+
+.footer {
+    text-align: center;
+    padding: 1opx;
+    background-color: #af4c74;
+    color: white;
+}
+.navbar {
+    background-color: #2486ad;
+    padding: 30px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+/* General Styles */
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f7;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #2b6cb0;
+    color: white;
+    padding: 2em;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 15px;
+}
+
+.nav-bar a {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.main-container {
+    padding: 40px;
+    text-align: center;
+}
+
+h2, h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #004080;
+}
+
+table {
+    margin: 30px auto;
+    border-collapse: collapse;
+    width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+table th, table td {
+    border: 2px solid #ddd;
+    padding: 20px;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+table th {
+    background-color: #2c9cb0;
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Form */
+form {
+    margin: 30px auto;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+form input {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 40%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #2b6cb0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #004080;
+}
+
+/* Footer */
+.footer {
+    background-color: #2b6cb0;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.2em;
+}
+
