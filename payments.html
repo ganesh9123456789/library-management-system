@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Library Management - Payments</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Library Management System</h1>
+        <nav class="nav-bar">
+            <a href="payments.html">Payments</a>
+            <a href="books.html">Books</a>
+            <a href="members.html">Members</a>
+            <a href="refund.html">Return (or) Due Details</a>
+            <button id="logout-button" class="logout-button">Logout</button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h2>Payments</h2>
+        <table id="payments-table">
+            <thead>
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Member Name</th>
+                    <th>Payment Amount</th>
+                    <th>Date</th>
+                    <th>Online Payment ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User-added rows will appear here -->
+            </tbody>
+        </table>
+
+        <h3>Add a Payment Record</h3>
+        <form id="payment-form">
+            <input type="text" id="payment-id" placeholder="Payment ID" required>
+            <input type="text" id="member-name" placeholder="Member Name" required>
+            <input type="text" id="payment-amount" placeholder="Payment Amount" required>
+            <input type="date" id="payment-date" required>
+            <input type="text" id="online-payment-id" placeholder="Online Payment ID" required>
+            <button type="button" id="add-payment">Add Payment</button>
+            <button type="submit">Finish</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Library Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const addPaymentButton = document.getElementById("add-payment");
+        const paymentForm = document.getElementById("payment-form");
+        const paymentsTableBody = document.querySelector("#payments-table tbody");
+
+        // Add Payment Record
+        addPaymentButton.addEventListener("click", function () {
+            const paymentID = document.getElementById("payment-id").value;
+            const memberName = document.getElementById("member-name").value;
+            const paymentAmount = document.getElementById("payment-amount").value;
+            const paymentDate = document.getElementById("payment-date").value;
+            const onlinePaymentID = document.getElementById("online-payment-id").value;
+
+            if (paymentID && memberName && paymentAmount && paymentDate && onlinePaymentID) {
+                const newRow = document.createElement("tr");
+                newRow.innerHTML = `
+                    <td>${paymentID}</td>
+                    <td>${memberName}</td>
+                    <td>${paymentAmount}</td>
+                    <td>${paymentDate}</td>
+                    <td>${onlinePaymentID}</td>
+                `;
+                paymentsTableBody.appendChild(newRow);
+
+                // Clear form fields
+                paymentForm.reset();
+            } else {
+                alert("Please fill in all fields!");
+            }
+        });
+
+        // Submit Payment Form
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Process Completed!');
+        });
+
+        // Logout Functionality
+        document.getElementById("logout-button").addEventListener("click", function () {
+            // Redirect to login page
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>
