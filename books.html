@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Library Management - Books</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Library Management System</h1>
+        <nav class="nav-bar">
+            <a href="book.html">Books</a>
+            <a href="members.html">Members</a>
+            <a href="payments.html">payments</a>
+            <a href="refund.html">return(or)due details</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h2>Books Available</h2>
+        <table id="books-table">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Book Name</th>
+                    <th>Author Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User-added rows will appear here -->
+            </tbody>
+        </table>
+
+        <h3>Add a New Book</h3>
+        <form id="book-form">
+            <input type="text" id="book-id" placeholder="Book ID" required>
+            <input type="text" id="book-name" placeholder="Book Name" required>
+            <input type="text" id="author-name" placeholder="Author Name" required>
+            <button type="button" id="add-book">Add Book</button>
+            <button type="submit">Next</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Library Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const addBookButton = document.getElementById("add-book");
+        const bookForm = document.getElementById("book-form");
+        const booksTableBody = document.querySelector("#books-table tbody");
+
+        addBookButton.addEventListener("click", function () {
+            const bookID = document.getElementById("book-id").value;
+            const bookName = document.getElementById("book-name").value;
+            const authorName = document.getElementById("author-name").value;
+
+            if (bookID && bookName && authorName && price && genre) {
+                const newRow = document.createElement("tr");
+                newRow.innerHTML = `
+                    <td>${bookID}</td>
+                    <td>${bookName}</td>
+                    <td>${authorName}</td>
+                `;
+                booksTableBody.appendChild(newRow);
+
+                // Clear form fields
+                bookForm.reset();
+            } else {
+                alert("Please fill in all fields!");
+            }
+        });
+    </script>
+     <script>
+        document.getElementById('book-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Logic to process or save book details can go here
+            window.location.href = 'members.html'; // Redirect to Members page
+        });
+    </script>
+    
+</body>
+</html>
