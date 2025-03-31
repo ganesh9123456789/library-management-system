@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Library Management - Members</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Library Management System</h1>
+        <nav class="nav-bar">
+            <a href="members.html">Members</a>
+            <a href="books.html">Books</a>
+            <a href="payments.html">Payments</a>
+        <a href="refund.html">return(or)due details</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h2>Members</h2>
+        <table id="members-table">
+            <thead>
+                <tr>
+                    <th>Member ID</th>
+                    <th>Member Name</th>
+                    <th>Librarian</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User-added rows will appear here -->
+            </tbody>
+        </table>
+
+        <h3>Add a New Member</h3>
+        <form id="member-form">
+            <input type="text" id="member-id" placeholder="Member ID">
+            <input type="text" id="member-name" placeholder="Member Name">
+            <input type="text" id="librarian" placeholder="Librarian">
+            <button type="button" id="add-member">Add Member</button>
+        </form>
+
+        <h3>Add a New User</h3>
+        <form id="user-form">
+            <input type="text" id="user-id" placeholder="User ID">
+            <input type="text" id="user-name" placeholder="User Name">
+            <button type="button" id="add-member">Add member</button>
+            <button type="submit" id="next-page">Next</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Library Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Member addition
+        const addMemberButton = document.getElementById("add-member");
+        const memberForm = document.getElementById("member-form");
+        const membersTableBody = document.querySelector("#members-table tbody");
+
+        addMemberButton.addEventListener("click", function () {
+            const memberID = document.getElementById("member-id").value;
+            const memberName = document.getElementById("member-name").value;
+            const librarian = document.getElementById("librarian").value;
+
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td>${memberID || 'N/A'}</td>
+                <td>${memberName || 'N/A'}</td>
+                <td>${librarian || 'N/A'}</td>
+            `;
+            membersTableBody.appendChild(newRow);
+
+            // Clear form fields
+            memberForm.reset();
+        });
+
+        // Redirect to Payments page upon submitting the User form
+        const nextPageButton = document.getElementById('next-page');
+        document.getElementById('user-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+            window.location.href = 'payments.html'; // Redirect to payments.html
+        });
+    </script>
+</body>
+</html>
