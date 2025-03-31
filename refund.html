@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Library Management - Payments</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Library Management System</h1>
+        <nav class="nav-bar">
+            <a href="refund.html">Return (or) Due Details</a>
+            <a href="payments.html">Payments</a>
+            <a href="books.html">Books</a>
+            <a href="members.html">Members</a>
+            <button id="logout-button" class="logout-button">Logout</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Return Payments Section -->
+        <section id="return-payments">
+            <h2>Return Payments</h2>
+            <table id="return-payments-table">
+                <thead>
+                    <tr>
+                        <th>Member ID</th>
+                        <th>Member Name</th>
+                        <th>Return Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User-added return rows will appear here -->
+                </tbody>
+            </table>
+
+            <h3>Add a Return Payment Record</h3>
+            <form id="return-form">
+                <input type="text" id="member-id" placeholder="Member ID" required>
+                <input type="text" id="return-member-name" placeholder="Member Name" required>
+                <input type="text" id="return-amount" placeholder="Return Amount" required>
+                <input type="date" id="return-date" required>
+                <button type="button" id="add-return">Add Return</button>
+            </form>
+        </section>
+
+        <!-- Due Payments Section -->
+        <section id="due-payments">
+            <h2>Due Payments</h2>
+            <table id="due-payments-table">
+                <thead>
+                    <tr>
+                        <th>Member ID</th>
+                        <th>Member Name</th>
+                        <th>Due Amount</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User-added due rows will appear here -->
+                </tbody>
+            </table>
+
+            <h3>Add a Due Payment Record</h3>
+            <form id="due-form">
+                <input type="text" id="member-id" placeholder="Member ID" required>
+                <input type="text" id="due-member-name" placeholder="Member Name" required>
+                <input type="text" id="due-amount" placeholder="Due Amount" required>
+                <input type="date" id="due-date" required>
+                <button type="button" id="add-due">Add Due</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Library Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Add Return Payment
+        document.getElementById("add-return").addEventListener("click", function () {
+            const memberID = document.getElementById("member-id").value;
+            const returnMemberName = document.getElementById("return-member-name").value;
+            const returnAmount = document.getElementById("return-amount").value;
+            const returnDate = document.getElementById("return-date").value;
+
+            if (memberID && returnMemberName && returnAmount && returnDate) {
+                const newRow = document.createElement("tr");
+                newRow.innerHTML = `
+                    <td>${memberID}</td>
+                    <td>${returnMemberName}</td>
+                    <td>${returnAmount}</td>
+                    <td>${returnDate}</td>
+                `;
+                document.querySelector("#return-payments-table tbody").appendChild(newRow);
+                document.getElementById("return-form").reset();
+            } else {
+                alert("Please fill in all fields!");
+            }
+        });
+
+        // Add Due Payment
+        document.getElementById("add-due").addEventListener("click", function () {
+            const memberID = document.getElementById("member-id").value;
+            const dueMemberName = document.getElementById("due-member-name").value;
+            const dueAmount = document.getElementById("due-amount").value;
+            const dueDate = document.getElementById("due-date").value;
+
+            if (memberID && dueMemberName && dueAmount && dueDate) {
+                const newRow = document.createElement("tr");
+                newRow.innerHTML = `
+                    <td>${memberID}</td>
+                    <td>${dueMemberName}</td>
+                    <td>${dueAmount}</td>
+                    <td>${dueDate}</td>
+                `;
+                document.querySelector("#due-payments-table tbody").appendChild(newRow);
+                document.getElementById("due-form").reset();
+            } else {
+                alert("Please fill in all fields!");
+            }
+        });
+
+        // Logout Functionality
+        document.getElementById("logout-button").addEventListener("click", function () {
+            // Redirect to login page
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>
