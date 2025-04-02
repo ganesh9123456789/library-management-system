@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
 </head>
 <body>
     <div class="login-page">
         <img src="library-logo-design-precious-astonishing-13-removebg-preview.png">
         <h1>Library Management System</h1>
         <form class="login-form" id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
@@ -39,15 +43,23 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
+        const db = firebase.firestore();
 
         document.getElementById("login-form").addEventListener("submit", function(event) {
             event.preventDefault();
+            const username = document.getElementById("username").value;
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             
-            auth.signInWithEmailAndPassword(email, password)
+            auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    // Redirect on successful login
+                    const user = userCredential.user;
+                    return db.collection("users").doc(user.uid).set({
+                        username: username,
+                        email: email
+                    });
+                })
+                .then(() => {
                     window.location.href = "library.html";
                 })
                 .catch((error) => {
@@ -57,4 +69,3 @@
     </script>
 </body>
 </html>
-
